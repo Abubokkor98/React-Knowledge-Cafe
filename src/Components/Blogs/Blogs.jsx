@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Blog from '../Blog/Blog';
 
-export default function Blogs({handleAddToBookmark}) {
+export default function Blogs({handleAddToBookmark, handleMarkAsRead}) {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(()=>{
@@ -17,6 +17,7 @@ export default function Blogs({handleAddToBookmark}) {
             blog={blog} 
             key={blog.id}
             handleAddToBookmark={handleAddToBookmark}
+            handleMarkAsRead={handleMarkAsRead}
             ></Blog>)
       }
 

@@ -1,14 +1,16 @@
 import React from 'react'
+// for icons
+import { FaRegBookmark } from "react-icons/fa";
 
-export default function Blog({blog}) {
+export default function Blog({blog, handleAddToBookmark}) {
     const {title, cover, reading_time, author, 
         posted_date, author_img, hashtags} = blog;
     console.log(blog);
   return (
-    <div>
-        <img src={cover} alt={`cover picture of the title ${title}`} />
+    <div className='mb-20'>
+        <img className='w-full mb-8' src={cover} alt={`cover picture of the title ${title}`} />
         {/* author content */}
-        <div className='flex justify-between'>
+        <div className='flex justify-between mb-4'>
             <div className='flex'>
                 <img className='w-14' src={author_img} alt="Author image" />
                 <div className='ml-6'>
@@ -18,6 +20,7 @@ export default function Blog({blog}) {
             </div>
             <div>
                 <span>{reading_time} min read</span>
+                <button className='ml-2 text-red-400 text-2xl' onClick={handleAddToBookmark}><FaRegBookmark></FaRegBookmark></button>
             </div>
 
         </div>

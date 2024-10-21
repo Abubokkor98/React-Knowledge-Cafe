@@ -5,7 +5,7 @@ import { FaRegBookmark } from "react-icons/fa";
 export default function Blog({blog, handleAddToBookmark}) {
     const {title, cover, reading_time, author, 
         posted_date, author_img, hashtags} = blog;
-    console.log(blog);
+   
   return (
     <div className='mb-20'>
         <img className='w-full mb-8' src={cover} alt={`cover picture of the title ${title}`} />
@@ -20,7 +20,7 @@ export default function Blog({blog, handleAddToBookmark}) {
             </div>
             <div>
                 <span>{reading_time} min read</span>
-                <button className='ml-2 text-red-400 text-2xl' onClick={handleAddToBookmark}><FaRegBookmark></FaRegBookmark></button>
+                <button className='ml-2 text-red-400 text-2xl' onClick={()=>handleAddToBookmark(blog)}><FaRegBookmark></FaRegBookmark></button>
             </div>
 
         </div>

@@ -9,7 +9,7 @@ export default function Bookmarks({bookmarks,readingTime}) {
       </div>
         <h2 className='text-2xl text-center '>Bookmarked Blogs: {bookmarks.length}</h2>
         {
-          bookmarks.map(bookmark=> <Bookmark bookmark={bookmark} key={bookmark.id}></Bookmark>)
+          bookmarks.map((bookmark, index)=> <Bookmark bookmark={bookmark} key={index}></Bookmark>)
         }
     </div>
   )
